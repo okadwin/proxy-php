@@ -1,6 +1,6 @@
 <?php
 @session_start();
-$host=$_GET['h'] ? $_GET['h'] : 'http://172.16.0.15:8080/loanBack/';
+$host=$_GET['h'] ? $_GET['h'] : 'http://10.0.0.10:8080/';
 $uri=$_GET['uri'] ? $_GET['uri'] : '';
 $url=$host.$uri;
 
@@ -23,7 +23,7 @@ foreach ($http_response_header as $key => $value) {
 foreach ($cookies[1] as $key => $value) {
   $cookiesstr.=$value.";";
 }
-if (empty($_SESSION['cookiestr'])) {
+if (($_SESSION['cookiestr'])！= $cookiesstr) {
   $_SESSION['cookiestr']=$cookiesstr;
 }
 
