@@ -23,7 +23,7 @@ foreach ($http_response_header as $key => $value) {
 foreach ($cookies[1] as $key => $value) {
   $cookiesstr.=$value.";";
 }
-if (($_SESSION['cookiestr'])！= $cookiesstr) {
+if (($_SESSION['cookiestr']) != $cookiesstr) {
   $_SESSION['cookiestr']=$cookiesstr;
 }
 
